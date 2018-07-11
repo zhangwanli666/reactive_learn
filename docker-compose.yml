@@ -1,0 +1,8 @@
+version: '2'
+services:
+  mongodb:
+    image: tutum/mongodb
+    ports:
+      - 27017:27017
+    command: mongod --auth
+    tty: true

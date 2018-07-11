@@ -1,0 +1,45 @@
+logging:
+  level:
+    root: info
+spring:
+  security:
+    user:
+      name: zhangwanli
+      password: 123456
+  boot:
+    admin:
+      client:
+        url: http://localhost:8082
+        username: zhangwanli
+        password: 123456
+        instance:
+          name: Reactive-Learn-Application
+        enabled: true
+        api-path: instances
+        auto-deregistration: true
+  data:
+    mongodb:
+      database: app
+#      authentication-database: learn #授权数据库
+      host: localhost
+      port: 27017
+      repositories:
+        type: reactive
+      username: swen
+      password: swen
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude:
+          - '/scheduledtasks'
+  endpoint:
+    health:
+      show-details: always
+server:
+  port: 8080
+
